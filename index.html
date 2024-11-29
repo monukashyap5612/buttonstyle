@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Navigation Bar</title>
+  <style>
+    /* General navigation bar styling */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      background-color: #f8f9fa;
+      padding: 10px;
+    }
+
+    /* 1. Style for sections */
+    .navbar section {
+      margin: 0 15px;
+    }
+
+    /* 2. Style links in different sections using descendant combinators */
+    .navbar .section1 a {
+      color: #007bff; /* Blue links */
+    }
+
+    .navbar .section2 a {
+      color: #28a745; /* Green links */
+    }
+
+    .navbar .section3 a {
+      color: #dc3545; /* Red links */
+    }
+
+    /* 3. Apply :hover and :active pseudo-classes */
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    .navbar a:active {
+      color: #ffc107; /* Change color to yellow when clicked */
+    }
+
+    /* 4. Use child combinator for direct child links */
+    .navbar .section1 > a {
+      font-weight: bold;
+    }
+
+    /* 5. Ensure links with href starting with https override other styles */
+    .navbar a[href^="https"] {
+      color: #6f42c1; /* Purple color overrides other styles */
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <!-- Section 1 -->
+    <section class="section1">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <div>
+        <a href="#">Nested Link 1</a>
+        <a href="#">Nested Link 2</a>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="section2">
+      <a href="#">Services</a>
+      <a href="https://example.com">External Link</a>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="section3">
+      <a href="#">Contact</a>
+      <a href="#">Support</a>
+    </section>
+  </nav>
+</body>
+</html>
